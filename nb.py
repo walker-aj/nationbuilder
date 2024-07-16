@@ -376,7 +376,7 @@ class Events(Sites):
         return f"{__class__}"
 
     def index(
-            self, site_slug="2019", tags=None,
+            self, site_slug, tags=None,
             starting=None, until=None, calendar_id=None):
 
         resp = requests.get(
@@ -390,26 +390,26 @@ class Events(Sites):
         )
         return resp
 
-    def events_create(self, nb_data, site_slug="2019"):
+    def events_create(self, nb_data, site_slug):
         resp = requests.post(
             f"{self.EVENTS_URL}?{self.URL_CAP}",
             json=nb_data
         )
         return resp
 
-    def event_destroy(self, event_id, site_slug="2019"):
+    def event_destroy(self, event_id, site_slug):
         resp = requests.delete(
             f"{self.EVENTS_URL}/{event_id}?{self.URL_CAP}"
         )
         return resp
 
-    def rsvps(self, event_id, site_slug="2019"):
+    def rsvps(self, event_id, site_slug):
         resp = requests.get(
             f"{self.EVENTS_URL}/{event_id}/rsvps?{self.URL_CAP}",
         )
         return resp
 
-    def rsvp_create(self, event_id, nb_data, site_slug="2019"):
+    def rsvp_create(self, event_id, nb_data, site_slug):
         resp = requests.post(
             f"{self.EVENTS_URL}/{event_id}/rsvps?{self.URL_CAP}",
             json=nb_data
