@@ -1,5 +1,5 @@
 ## Acknowledgements
-This libray is built from the work work Niklas Rehfeld. Thank you.
+This libray is built from the work of Niklas Rehfeld. Thank you.
 
 Author: Niklas Rehfeld
 
